@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
-		<title>App Name: A Coding Project by Heagan Henry</title>
+		<title>Rewind: A Coding Project by Heagan Henry</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,6 +14,11 @@
 			crossorigin="anonymous"
 		/>
 
+		<!-- Google Fonts for Asap Condensed -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap" rel="stylesheet" />
+
 		<link rel="stylesheet" href="css/site.css" />
 		<link rel="icon" href="img/favicon.ico?" />
 	</head>
@@ -22,7 +27,7 @@
 		<!-- Nav Section -->
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"
+				<a class="logoFont navbar-brand d-flex align-text-bottom" href="#"
 					><img
 						src="img/HFS_Logo.png"
 						alt="Heagan Logo"
@@ -30,7 +35,7 @@
 						width="30"
 						height="30"
 					/>
-					APP NAME</a
+					REWIND</a
 				>
 				<button
 					class="navbar-toggler"
@@ -55,10 +60,10 @@
 							<a class="nav-link" href="code.html">The Code</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="blank" href="#">Git Repo</a>
+							<a class="nav-link" target="_blank" href="https://github.com/heaganhenry">Git Repo</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="blank" href="#">About</a>
+							<a class="nav-link" target="_blank" href="#">About</a>
 						</li>
 					</ul>
 				</div>
@@ -66,7 +71,41 @@
 		</nav>
 		<!-- Main Section -->
 		<main class="flex-shrink-0">
-			<div class="container"></div>
+			<div class="container mt-5">
+				<div class="row row-cols-1 row-cols-lg-2">
+					<div class="col">
+						<h1 class="display-5 fw-bold lh-1 mb-3">REWIND: A Coding Project</h1>
+						<span class="lead">
+							There and back again. A javascript coding exercise using arrays. Write a program that
+							displays a string in reverse.
+						</span>
+					</div>
+					<div class="col">
+						<span class="h5 border-1 border-bottom border-primary">Enter a String to Reverse</span>
+						<form class="row gx-3 gy-2">
+							<div class="col">
+								<input
+									id="userString"
+									type="text"
+									class="form-control"
+									placeholder="Enter A String"
+									aria-label="Enter A String"
+								/>
+							</div>
+							<div class="col-12">
+								<button id="btnSubmit" type="button" class="btn btn-primary">Reverse Me</button>
+							</div>
+							<div id="alert" role="alert" class="alert alert-primary mt-5 invisible fade show">
+								<span class="h4 mt-0 alert-heading">Well Done!</span>
+								<hr />
+								<p id="msg" class="mb-0">
+									<!-- Insert Message with JS -->
+								</p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 		</main>
 		<!-- Footer Section -->
 		<footer class="footer mt-auto py-3 bg-dark sticky-footer">
@@ -106,8 +145,12 @@
 			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 			crossorigin="anonymous"
 		></script>
-		<script src="js/site.js"></script>
 		<!-- Fontawesome JS -->
 		<script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+		<!-- Custom JS -->
+		<script src="js/site.js"></script>
+		<script>
+			document.getElementById("btnSubmit").addEventListener("click", getValue);
+		</script>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
-		<title>App Name: A Coding Project by Heagan Henry</title>
+		<title>Rewind: A Coding Project by Heagan Henry</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,6 +14,11 @@
 			crossorigin="anonymous"
 		/>
 
+		<!-- Google Fonts for Asap Condensed -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap" rel="stylesheet" />
+
 		<link rel="stylesheet" href="css/site.css" />
 		<link rel="stylesheet" href="css/prism.css" />
 		<link rel="icon" href="img/favicon.ico?" />
@@ -23,15 +28,15 @@
 		<!-- Nav Section -->
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"
+				<a class="logoFont navbar-brand d-flex align-text-bottom" href="#"
 					><img
 						src="img/HFS_Logo.png"
 						alt="Heagan Logo"
-						class="d-inline-block align-text-top me-1"
+						class="d-inline-block align-text-top me-2"
 						width="30"
 						height="30"
 					/>
-					APP NAME</a
+					REWIND</a
 				>
 				<button
 					class="navbar-toggler"
@@ -56,10 +61,10 @@
 							<a class="nav-link active" aria-current="page" href="code.html">The Code</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="blank" href="#">Git Repo</a>
+							<a class="nav-link" target="_blank" href="https://github.com/heaganhenry">Git Repo</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="blank" href="#">About</a>
+							<a class="nav-link" target="_blank" href="#">About</a>
 						</li>
 					</ul>
 				</div>
@@ -68,22 +73,64 @@
 		<!-- Main Section -->
 		<main class="flex-shrink-0">
 			<div class="container py-5 px-5 mt-5">
-				<span class="h2 border-bottom border-1 border-dark">The Code for APP NAME.</span>
-				<div class="row row-cols-1 row-cols-lg-2">
+				<span class="h2 border-bottom border-1 border-dark">The Code for REWIND</span>
+				<div class="row row-cols-1 row-cols-lg-2 gy-3">
 					<div class="col-lg-8">
 						<pre class="line-numbers">
                             <code class="language-javascript">
-                                // Call Hello World
-                                function helloWorld() {
-                                    alert("Hello World");
-                                }
+								// controller function
+								// get string from user input
+								function getValue() {
+									let userString = document.getElementById("userString").value;
+									let reversedString = reverseString(userString);
+									displayString(reversedString);
+								}
+								
+								// logic function
+								// reverse the string
+								function reverseString(userString) {
+									let reversedString = "";
+									// reverse the string using a for loop
+									for (let i = userString.length - 1; i >= 0; i--){
+										reversedString += userString[i];
+									}
+								
+									return reversedString;
+								}
+								
+								// view function
+								// display the reversed string
+								function displayString(reversedString) {
+									// insert string in the page
+									document.getElementById("msg").innerHTML = `Your string reversed is: ${reversedString}`
+								
+									// show the alert box
+									document.getElementById("alert").classList.remove("invisible");
+								}
                             </code>
                         </pre>
 					</div>
 					<div class="col-lg-4">
-						<p style="font-size: large">The Code is structured in one function.</p>
-						<span class="h4" style="font-size: large">Hello World</span>
-						<p>helloWorld is a function that displays an alert with a message of "Hello World".</p>
+						<p style="font-size: large">The Code is structured in three functions.</p>
+						<span class="h4" style="font-size: large">getValue</span>
+						<p>
+							getValue is a function that retrieves the value of the string entered by the user on the web
+							page. This is achieved by using the native getElementById function and referencing the
+							unique id of the input field used in the web page. Being a controller function getValue also
+							calls the below functions to control when they are run.
+						</p>
+						<span class="h4" style="font-size: large">reverseString</span>
+						<p>
+							reverseString is a function that takes the user input text and reverses it by creating a new
+							empty string and inserts each character of the user text into the new string, starting from
+							the last character to the first.
+						</p>
+						<span class="h4" style="font-size: large">displayString</span>
+						<p>
+							displayString is a function that takes the reversed string created by the previous function
+							and inserts it into the web page by referencing a unique id at the appropriate position on
+							the page with the native innerHTML function.
+						</p>
 					</div>
 				</div>
 			</div>
