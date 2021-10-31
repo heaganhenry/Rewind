@@ -22,7 +22,7 @@ function reverseString(userString) {
 // display the reversed string
 function displayString(reversedString) {
     // insert string in the page
-    document.getElementById("msg").innerHTML = `Your string reversed is: ${reversedString}`
+    document.getElementById("msg").innerHTML = `Your string reversed is: ${reversedString}`;
 
     // show the alert box
     document.getElementById("alert").classList.remove("invisible");
